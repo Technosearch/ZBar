@@ -90,7 +90,7 @@ Pod::Spec.new do |s|
   #
    
     
-  s.source_files  = "include/zbar.h", "zbar/**/*.h", "iphone/*.h", "iphone/include/**/*.h", "zbar/{config,decoder,error,image,img_scanner,refcnt,scanner,symbol}.c","zbar/decoder/{codabar,code39,code93,code128,databar,ean,i25,qr_finder}.c",
+  s.source_files  = "include/zbar.h", "iphone/*.h", "iphone/include/**/*.h", "zbar/{config,decoder,error,image,img_scanner,refcnt,scanner,symbol}.c","zbar/decoder/{codabar,code39,code93,code128,databar,ean,i25,qr_finder}.c",
     "zbar/qrcode/*.c", "iphone/*.m"
   
   
