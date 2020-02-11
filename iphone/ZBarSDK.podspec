@@ -88,16 +88,13 @@ Pod::Spec.new do |s|
   #  For header files it will include any header in the folder.
   #  Not including the public_header_files will make all headers public.
   #
-
-  s.source_files  = "zbar/headers/*.{h}"
-  s.ios.vendored_library = 'zbar/libzbar.a'
-  s.exclude_files = "Classes/Exclude"
-
-  s.subspec 'zbar' do |zbar|
-    zbar.source_files = "zbar/headers/zbar/*.{h}"
-  end
-
-  # s.public_header_files = "Classes/**/*.h"
+   
+    
+  s.source_files  = "include/zbar.h", "zbar/**/*.h", "iphone/*.h", "iphone/include/**/*.h", "zbar/{config,decoder,error,image,img_scanner,refcnt,scanner,symbol}.c","zbar/decoder/{codabar,code39,code93,code128,databar,ean,i25,qr_finder}.c",
+    "zbar/qrcode/*.c", "iphone/*.m"
+  
+  
+  # s.public_header_files =  "iphone/**/**/*.h", "include/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -110,7 +107,8 @@ Pod::Spec.new do |s|
 
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
- 
+  s.resources  = "iphone/res/{zbar-*.png,zbar-help.html}"
+  
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
 
@@ -134,10 +132,19 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # s.requires_arc = true
+  # s.requires_arc = false
 
-  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
+  # s.xcconfig = { "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphoneos*][arch=*]": "ZBarReaderViewImpl_Simulator.m",
+  "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*][arch=*]": "ZBarReaderViewImpl_Capture.m ZBarCaptureReader.m",
+  "GCC_PREPROCESSOR_DEFINITIONS": "NDEBUG=1"}
   # s.dependency "JSONKit", "~> 1.4"
-
+  
+  s.xcconfig = { "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphoneos*][arch=*]": "ZBarReaderViewImpl_Simulator.m",
+  "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*][arch=*]": "ZBarReaderViewImpl_Capture.m ZBarCaptureReader.m",
+  "GCC_PREPROCESSOR_DEFINITIONS": "NDEBUG=1"}
+  s.prefix_header_file = "iphone/include/prefix.pch"
+  s.compiler_flags = "-w"
+  s.requires_arc = false
+  
 end
 
