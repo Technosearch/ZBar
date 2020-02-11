@@ -135,13 +135,13 @@ Pod::Spec.new do |s|
   # s.requires_arc = false
 
   # s.xcconfig = { "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphoneos*][arch=*]": "ZBarReaderViewImpl_Simulator.m",
-  "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*][arch=*]": "ZBarReaderViewImpl_Capture.m ZBarCaptureReader.m",
-  "GCC_PREPROCESSOR_DEFINITIONS": "NDEBUG=1"}
+  # "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*][arch=*]": "ZBarReaderViewImpl_Capture.m ZBarCaptureReader.m",
+  #"GCC_PREPROCESSOR_DEFINITIONS": "NDEBUG=1"}
   # s.dependency "JSONKit", "~> 1.4"
   
-  s.xcconfig = { "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphoneos*][arch=*]": "ZBarReaderViewImpl_Simulator.m",
-  "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*][arch=*]": "ZBarReaderViewImpl_Capture.m ZBarCaptureReader.m",
-  "GCC_PREPROCESSOR_DEFINITIONS": "NDEBUG=1"}
+  s.xcconfig = { "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphoneos*][arch=*]" => "ZBarReaderViewImpl_Simulator.m",
+  "EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*][arch=*]" => "ZBarReaderViewImpl_Capture.m ZBarCaptureReader.m",
+  "GCC_PREPROCESSOR_DEFINITIONS" => "NDEBUG=1"}
   s.prefix_header_file = "iphone/include/prefix.pch"
   s.compiler_flags = "-w"
   s.requires_arc = false
