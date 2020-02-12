@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "ZBarSDK-Scanner"
+  s.name         = "ZBarSDK"
   s.version      = "1.3.2"
   s.summary      = "ZBarSDK."
 
