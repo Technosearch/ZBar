@@ -93,8 +93,7 @@ Pod::Spec.new do |s|
   s.source_files  = "include/zbar.h","zbar/**/*.h", "iphone/*.h", "iphone/include/**/*.h", "zbar/{config,decoder,error,image,img_scanner,refcnt,scanner,symbol}.c","zbar/decoder/{codabar,code39,code93,code128,databar,ean,i25,qr_finder}.c",
     "zbar/qrcode/*.c", "iphone/*.m"
   
-  
-  # s.public_header_files =  "iphone/**/**/*.h", "include/*.h"
+  s.public_header_files =  "iphone/**/**/*.h", "include/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -123,7 +122,7 @@ Pod::Spec.new do |s|
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
-  s.frameworks = "AVFoundation", "CoreGraphics", "CoreImage", "CoreMedia", "CoreVideo", "QuartzCore"
+  s.frameworks = "AVFoundation", "CoreGraphics" , "CoreMedia", "CoreVideo", "QuartzCore"
   s.library = "iconv"
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
